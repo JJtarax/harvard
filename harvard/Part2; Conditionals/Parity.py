@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 def main():
     x = int(input("What's x? "))
     if is_even(x):
