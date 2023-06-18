@@ -1,3 +1,6 @@
+# Tests a function with multiple functions via pytest
+
+
 def main():
     x = int(input("What's x? "))
     print("x squared is", square(x))
