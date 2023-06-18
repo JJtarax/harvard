@@ -1,10 +1,11 @@
+import csv #docs.python.org/3/library/csv.html
+
 students = []
 
 with open("students.csv") as file:
-    for line in file:
-        name, house = line.rstrip().split(",")
-        student = {"name":name , "house": house}
-        students.append(student)
+    reader = csv.reader(file)
+    for row in reader:
+        students.append({"name": row[0], "house": row[1], "home": row[2]})
 
-for students in sorted(students):
-    print(f"{students['name']} is in {students['house']}")
+for student in sorted(students, key=lambda student: student["name"]):
+    print(f"{student['name']} of {student['house']} is from {student['home']}")
