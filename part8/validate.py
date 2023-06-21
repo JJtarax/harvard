@@ -1,8 +1,20 @@
+import re
+
 email = input("What's your email? ").strip()
 
-username, domain = email.split("@")
-
-if username and "." in domain:
+if re.search(r"^\w+@(\w+\.)?\w+\.edu$", email, re.IGNORECASE):
     print("Valid")
 else:
     print("Invalid")
+
+'''ChatGPT verison
+import re
+
+email = input("What's your email? ").strip()
+
+pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
+
+if re.match(pattern, email):
+    print("Valid")
+else:
+    print("Invalid")'''
